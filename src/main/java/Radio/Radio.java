@@ -2,11 +2,13 @@ package Radio;
 
 public class Radio {
     String FM;
-    private int stationNumber;
-    private int volume;
+    int stationNumber;
+    int volume;
+    private int maxVolume;
+    private int minVolume;
     private int maxStationNumber;
     private int minStationNumber;
-    private boolean on;
+    boolean on;
 
     public String getFM() {
         return FM;
@@ -28,6 +30,7 @@ public class Radio {
             return;
         }
         this.stationNumber = stationNumber;
+
     }
 
     public int getVolume() {
@@ -35,7 +38,31 @@ public class Radio {
     }
 
     public void setVolume(int volume) {
+
+        if (volume > maxVolume) {
+            this.volume = maxVolume;
+            return;
+        }
+        if (volume < minVolume) {
+            return;
+        }
         this.volume = volume;
+    }
+
+    public int getMaxVolume() {
+        return maxVolume;
+    }
+
+    public void setMaxVolume(int maxVolume) {
+        this.maxVolume = maxVolume;
+    }
+
+    public int getMinVolume() {
+        return minVolume;
+    }
+
+    public void setMinVolume(int minVolume) {
+        this.minVolume = minVolume;
     }
 
     public int getMaxStationNumber() {
@@ -54,11 +81,4 @@ public class Radio {
         this.minStationNumber = minStationNumber;
     }
 
-    public boolean isOn() {
-        return on;
-    }
-
-    public void setOn(boolean on) {
-        this.on = on;
-    }
 }

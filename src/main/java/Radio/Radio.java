@@ -18,6 +18,17 @@ public class Radio {
         this.FM = FM;
     }
 
+    public void nextChanel() {
+        if (stationNumber < maxStationNumber) {
+            stationNumber++;
+        }
+    }
+    public void prevChanel() {
+        if (stationNumber > minStationNumber) {
+            stationNumber--;
+        }
+    }
+
     public int getStationNumber() {
         return stationNumber;
     }
@@ -36,6 +47,11 @@ public class Radio {
             if (volume < maxVolume) {
                 volume++;
             }
+        }
+            public void prevVolume() {
+                if (volume > minVolume) {
+                    volume--;
+                }
     }
     public int getVolume() {
         return volume;
@@ -84,5 +100,6 @@ public class Radio {
     public void setMinStationNumber(int minStationNumber) {
         this.minStationNumber = minStationNumber;
     }
+
 
 }

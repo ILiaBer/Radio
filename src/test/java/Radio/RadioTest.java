@@ -28,5 +28,10 @@ public class RadioTest {
 
     }
 
-
+    @Test
+    public void nextVolume() {
+        Radio radio = new Radio();
+        radio.setVolume(5);
+        assertEquals(6,nextVolume());
+    }
 }

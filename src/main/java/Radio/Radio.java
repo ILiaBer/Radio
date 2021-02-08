@@ -32,7 +32,11 @@ public class Radio {
         this.stationNumber = stationNumber;
 
     }
-
+        public void nextVolume() {
+            if (volume < maxVolume) {
+                volume++;
+            }
+    }
     public int getVolume() {
         return volume;
     }

@@ -1,7 +1,7 @@
 package Radio;
 
 public class Radio {
-    String FM;
+    String fm;
     int stationNumber;
     int volume;
     private int maxVolume;
@@ -10,25 +10,24 @@ public class Radio {
     private int minStationNumber;
     boolean on;
 
-    public String getFM() {
-        return FM;
+    public String getFm() {
+        return fm;
     }
 
-    public void setFM(String FM) {
-        this.FM = FM;
+    public void setFm(String FM) {
+        this.fm = fm;
     }
 
     public void nextChanel() {
         if (stationNumber < maxStationNumber) {
             stationNumber++;
-        }
-        else stationNumber =0;
+        } else stationNumber = 0;
     }
+
     public void prevChanel() {
         if (stationNumber > minStationNumber) {
             stationNumber--;
-        }
-        else stationNumber=10;
+        } else stationNumber = 10;
     }
 
     public int getStationNumber() {
@@ -45,16 +44,19 @@ public class Radio {
         this.stationNumber = stationNumber;
 
     }
-        public void nextVolume() {
-            if (volume < maxVolume) {
-                volume++;
-            }
+
+    public void nextVolume() {
+        if (volume < maxVolume) {
+            volume++;
         }
-            public void prevVolume() {
-                if (volume > minVolume) {
-                    volume--;
-                }
     }
+
+    public void prevVolume() {
+        if (volume > minVolume) {
+            volume--;
+        }
+    }
+
     public int getVolume() {
         return volume;
     }

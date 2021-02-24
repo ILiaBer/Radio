@@ -45,6 +45,7 @@ public class RadioTest {
         radio.prevVolume();
         assertEquals(9, radio.getVolume());
     }
+
     @Test
     public void nextChanel() {
         Radio radio = new Radio();
@@ -54,6 +55,7 @@ public class RadioTest {
         radio.nextChanel();
         assertEquals(6, radio.getStationNumber());
     }
+
     @Test
     public void prevChanel() {
         Radio radio = new Radio();

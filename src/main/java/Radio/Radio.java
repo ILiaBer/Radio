@@ -21,13 +21,17 @@ public class Radio {
     public void nextChanel() {
         if (stationNumber < maxStationNumber) {
             stationNumber++;
-        } else stationNumber = 0;
+        } else {
+            stationNumber = 0;
+        }
     }
 
     public void prevChanel() {
         if (stationNumber > minStationNumber) {
             stationNumber--;
-        } else stationNumber = 10;
+        } else {
+            stationNumber = 9;
+        }
     }
 
     public int getStationNumber() {

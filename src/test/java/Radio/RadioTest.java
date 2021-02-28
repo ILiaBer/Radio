@@ -12,8 +12,8 @@ public class RadioTest {
         assertEquals(0, radio.getStationNumber());
         radio.setMaxStationNumber(9);
         radio.setMinStationNumber(0);
-        radio.setStationNumber(9);
-        assertEquals(9, radio.getStationNumber());
+        radio.setStationNumber(10);
+        assertEquals(0, radio.getStationNumber());
     }
 
     @Test
@@ -29,11 +29,22 @@ public class RadioTest {
     @Test
     public void nextVolume() {
         Radio radio = new Radio();
-        radio.setMaxVolume(10);
+        radio.setMaxVolume(9);
         radio.setMinVolume(0);
         radio.setVolume(10);
         radio.nextVolume();
-        assertEquals(10, radio.getVolume());
+        assertEquals(9, radio.getVolume());
+
+    }
+
+    @Test
+    public void nextVolumeTwo() {
+        Radio radio = new Radio();
+        radio.setMaxVolume(9);
+        radio.setMinVolume(0);
+        radio.setVolume(6);
+        radio.nextVolume();
+        assertEquals(7, radio.getVolume());
     }
 
     @Test
@@ -41,11 +52,19 @@ public class RadioTest {
         Radio radio = new Radio();
         radio.setMaxVolume(10);
         radio.setMinVolume(0);
-        radio.setVolume(12);
+        radio.setVolume(9);
         radio.prevVolume();
-        assertEquals(9, radio.getVolume());
+        assertEquals(8, radio.getVolume());
     }
-
+    @Test
+    public void prevVolumeTwo() {
+        Radio radio = new Radio();
+        radio.setMaxVolume(10);
+        radio.setMinVolume(0);
+        radio.setVolume(-2);
+        radio.prevVolume();
+        assertEquals(0, radio.getVolume());
+    }
     @Test
     public void nextChanel() {
         Radio radio = new Radio();
@@ -57,6 +76,16 @@ public class RadioTest {
     }
 
     @Test
+    public void nextChanelTwo() {
+        Radio radio = new Radio();
+        radio.setMaxStationNumber(9);
+        radio.setMinStationNumber(0);
+        radio.setStationNumber(9);
+        radio.nextChanel();
+        assertEquals(0, radio.getStationNumber());
+    }
+
+    @Test
     public void prevChanel() {
         Radio radio = new Radio();
         radio.setMaxStationNumber(9);
@@ -64,8 +93,15 @@ public class RadioTest {
         radio.setStationNumber(5);
         radio.prevChanel();
         assertEquals(4, radio.getStationNumber());
+    }
 
-
+    @Test
+    public void prevChanelTwo() {
+        Radio radio = new Radio();
+        radio.setMaxStationNumber(9);
+        radio.setMinStationNumber(0);
+        radio.setStationNumber(-2);
+        radio.prevChanel();
+        assertEquals(9, radio.getStationNumber());
     }
 }
-

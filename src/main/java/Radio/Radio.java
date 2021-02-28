@@ -20,17 +20,18 @@ public class Radio {
 
     public void nextChanel() {
         if (stationNumber < maxStationNumber) {
-            stationNumber++;
-        } else {
-            stationNumber = 0;
+            stationNumber++; }
+        else {
+            stationNumber = minStationNumber;
         }
     }
 
     public void prevChanel() {
         if (stationNumber > minStationNumber) {
             stationNumber--;
-        } else {
-            stationNumber = 9;
+        }
+        else {
+            stationNumber = maxStationNumber;
         }
     }
 
@@ -52,12 +53,16 @@ public class Radio {
     public void nextVolume() {
         if (volume < maxVolume) {
             volume++;
+        } else {
+            volume = maxVolume;
         }
     }
 
     public void prevVolume() {
         if (volume > minVolume) {
             volume--;
+        } else {
+            volume = minVolume;
         }
     }
 

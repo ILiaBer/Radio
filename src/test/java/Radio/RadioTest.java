@@ -6,20 +6,16 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class RadioTest {
 
+
     @Test
     public void shouldChangeChanel() {
-        Radio radio = new Radio();
-        assertEquals(0, radio.getStationNumber());
-        radio.setMaxStationNumber(9);
-        radio.setMinStationNumber(0);
-        radio.setStationNumber(10);
-        assertEquals(0, radio.getStationNumber());
+        Radio radio = new Radio("Nord",12,50,100,0,10,0,true);
+        assertEquals(5, radio.getStationNumber());
     }
 
     @Test
     public void shouldChangeVolume() {
-        Radio radio = new Radio();
-        assertEquals(0, radio.getVolume());
+        Radio radio = new Radio("Nord",5,50,100,0,10,0,true);
         radio.setMaxVolume(10);
         radio.setMinVolume(0);
         radio.setVolume(11);
@@ -61,7 +57,7 @@ public class RadioTest {
         Radio radio = new Radio();
         radio.setMaxVolume(10);
         radio.setMinVolume(0);
-        radio.setVolume(-2);
+        radio.setVolume(0);
         radio.prevVolume();
         assertEquals(0, radio.getVolume());
     }
@@ -100,8 +96,13 @@ public class RadioTest {
         Radio radio = new Radio();
         radio.setMaxStationNumber(9);
         radio.setMinStationNumber(0);
-        radio.setStationNumber(-2);
+        radio.setStationNumber(0);
         radio.prevChanel();
         assertEquals(9, radio.getStationNumber());
     }
 }
+
+
+
+
+

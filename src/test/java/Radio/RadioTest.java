@@ -9,44 +9,42 @@ public class RadioTest {
 
     @Test
     public void shouldChangeChanel() {
-        Radio radio = new Radio("Nord",12,50,100,0,10,0,true);
-        assertEquals(5, radio.getStationNumber());
+        Radio radio = new Radio("Nord",10);
+        radio.setMinStationNumber(0);
+        radio.setStationNumber(11);
+        assertEquals(10, radio.getStationNumber());
     }
 
     @Test
     public void shouldChangeVolume() {
-        Radio radio = new Radio("Nord",5,50,100,0,10,0,true);
-        radio.setMaxVolume(10);
+        Radio radio = new Radio(100);
         radio.setMinVolume(0);
         radio.setVolume(11);
-        assertEquals(10, radio.getVolume());
+        assertEquals(11, radio.getVolume());
     }
 
     @Test
     public void nextVolume() {
-        Radio radio = new Radio();
-        radio.setMaxVolume(9);
+        Radio radio = new Radio(100);
         radio.setMinVolume(0);
         radio.setVolume(10);
         radio.nextVolume();
-        assertEquals(9, radio.getVolume());
+        assertEquals(11, radio.getVolume());
 
     }
 
     @Test
     public void nextVolumeTwo() {
-        Radio radio = new Radio();
-        radio.setMaxVolume(9);
+        Radio radio = new Radio(100);
         radio.setMinVolume(0);
-        radio.setVolume(6);
+        radio.setVolume(100);
         radio.nextVolume();
-        assertEquals(7, radio.getVolume());
+        assertEquals(100, radio.getVolume());
     }
 
     @Test
     public void prevVolume() {
-        Radio radio = new Radio();
-        radio.setMaxVolume(10);
+        Radio radio = new Radio(100);
         radio.setMinVolume(0);
         radio.setVolume(9);
         radio.prevVolume();
@@ -54,8 +52,7 @@ public class RadioTest {
     }
     @Test
     public void prevVolumeTwo() {
-        Radio radio = new Radio();
-        radio.setMaxVolume(10);
+        Radio radio = new Radio(100);
         radio.setMinVolume(0);
         radio.setVolume(0);
         radio.prevVolume();
@@ -63,8 +60,7 @@ public class RadioTest {
     }
     @Test
     public void nextChanel() {
-        Radio radio = new Radio();
-        radio.setMaxStationNumber(9);
+        Radio radio = new Radio("Nord",10);
         radio.setMinStationNumber(0);
         radio.setStationNumber(5);
         radio.nextChanel();
@@ -73,18 +69,16 @@ public class RadioTest {
 
     @Test
     public void nextChanelTwo() {
-        Radio radio = new Radio();
-        radio.setMaxStationNumber(9);
+        Radio radio = new Radio("Nord",10);
         radio.setMinStationNumber(0);
-        radio.setStationNumber(9);
+        radio.setStationNumber(10);
         radio.nextChanel();
         assertEquals(0, radio.getStationNumber());
     }
 
     @Test
     public void prevChanel() {
-        Radio radio = new Radio();
-        radio.setMaxStationNumber(9);
+        Radio radio = new Radio("Nord",10);
         radio.setMinStationNumber(0);
         radio.setStationNumber(5);
         radio.prevChanel();
@@ -93,12 +87,11 @@ public class RadioTest {
 
     @Test
     public void prevChanelTwo() {
-        Radio radio = new Radio();
-        radio.setMaxStationNumber(9);
+        Radio radio = new Radio("Nord",10);
         radio.setMinStationNumber(0);
         radio.setStationNumber(0);
         radio.prevChanel();
-        assertEquals(9, radio.getStationNumber());
+        assertEquals(10, radio.getStationNumber());
     }
 }
 

@@ -14,20 +14,14 @@ public class Radio {
     private int minStationNumber = 10;
     boolean on;
 
-    public Radio(String fm, int stationNumber, int volume, int maxVolume, int minVolume, int maxStationNumber, int minStationNumber, boolean on) {
-        this.fm = fm;
-        this.stationNumber = stationNumber;
-        this.volume = volume;
+    public Radio(int maxVolume) {
         this.maxVolume = maxVolume;
-        this.minVolume = minVolume;
+    }
+
+    public Radio(String fm, int maxStationNumber) {
+        this.fm = fm;
         this.maxStationNumber = maxStationNumber;
-        this.minStationNumber = minStationNumber;
-        this.on = on;
     }
-
-    public Radio() {
-    }
-
 
     public void nextChanel() {
         if (stationNumber < maxStationNumber) {
